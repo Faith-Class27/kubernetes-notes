@@ -19,10 +19,10 @@ kubectl get nodes -o wide
 - Create a Pod
 ```
 # Template
-kubectl run <desired-pod-name> --image <Container-Image> --generator=run-pod/v1
+kubectl run <desired-pod-name> --image <Container-Image> 
 
 # Replace Pod Name, Container Image
-kubectl run my-first-pod --image mylandmarktech/hello --generator=run-pod/v1
+kubectl run my-first-pod --image mylandmarktech/hello 
 ```
 - **Important Note:** Without **--generator=run-pod/v1** it will create a pod with a deployment which is another core kubernetes concept which we will learn in next few minutes. 
 - **Important Note:**
@@ -163,6 +163,7 @@ kubectl logs -f my-first-pod
 # Connect to Nginx Container in a POD
 kubectl exec -it <pod-name> -- /bin/bash
 kubectl exec -it my-first-pod -- /bin/bash
+kubectl exec -it my-first-pod -- /bin/sh
 
 # Execute some commands in Nginx container
 ls
